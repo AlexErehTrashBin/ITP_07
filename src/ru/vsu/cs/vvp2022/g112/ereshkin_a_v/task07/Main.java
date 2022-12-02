@@ -60,7 +60,6 @@ public class Main {
             resultSubsequenceEndIndex = currentIndex;
             resultSubsequenceStartIndex = currentStartIndex - localRepeats + 1;
         }
-        //currentIndex--;
         return extractArrayFromArray(array, resultSubsequenceStartIndex, resultSubsequenceEndIndex);
     }
 
