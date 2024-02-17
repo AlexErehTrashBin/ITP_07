@@ -31,18 +31,18 @@ public class Main {
         for (; currentIndex < array.length; currentIndex++) {
             boolean equalsPrevious = array[currentIndex] == array[currentIndex - 1];
             boolean isLocallyRising = array[currentIndex] > array[currentIndex - 1];
-            if (equalsPrevious){
+            if (equalsPrevious) {
                 if (localSwaps == 1) localRepeats++;
             } else {
                 //if (localSwaps == 1) localRepeats = 1;
-                if (isRising != isLocallyRising){
+                if (isRising != isLocallyRising) {
                     isRising = !isRising;
                     localSwaps++;
                 }
-                if (localSwaps == 2){
+                if (localSwaps == 2) {
                     int resultLength = resultSubsequenceEndIndex - resultSubsequenceStartIndex + 1;
                     int currentLength = currentIndex - currentStartIndex;
-                    if (resultLength < currentLength){
+                    if (resultLength < currentLength) {
                         resultSubsequenceEndIndex = currentIndex - 1;
                         resultSubsequenceStartIndex = currentStartIndex;
                     }
@@ -56,13 +56,12 @@ public class Main {
         currentIndex--;
         int resultLength = resultSubsequenceEndIndex - resultSubsequenceStartIndex + 1;
         int currentLength = currentIndex - currentStartIndex + localRepeats;
-        if (resultLength <= currentLength){
+        if (resultLength <= currentLength) {
             resultSubsequenceEndIndex = currentIndex;
             resultSubsequenceStartIndex = currentStartIndex - localRepeats + 1;
         }
         return extractArrayFromArray(array, resultSubsequenceStartIndex, resultSubsequenceEndIndex);
     }
-
 
 
     public static void main(String[] args) {
